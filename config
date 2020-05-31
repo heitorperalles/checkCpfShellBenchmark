@@ -1,0 +1,88 @@
+# ------------------------------------------------------------------------------
+# From http://github.com/heitorperalles/checkCpfShellBenchmark
+#
+# Distributed under The MIT License (MIT) <http://opensource.org/licenses/MIT>
+#
+# Copyright (c) 2020 Heitor Peralles <heitorgp@gmail.com>
+#
+# Permission is hereby  granted, free of charge, to any  person obtaining a copy
+# of this software and associated  documentation files (the "Software"), to deal
+# in the Software  without restriction, including without  limitation the rights
+# to  use, copy,  modify, merge,  publish, distribute,  sublicense, and/or  sell
+# copies  of  the Software,  and  to  permit persons  to  whom  the Software  is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE  IS PROVIDED "AS  IS", WITHOUT WARRANTY  OF ANY KIND,  EXPRESS OR
+# IMPLIED,  INCLUDING BUT  NOT  LIMITED TO  THE  WARRANTIES OF  MERCHANTABILITY,
+# FITNESS FOR  A PARTICULAR PURPOSE AND  NONINFRINGEMENT. IN NO EVENT  SHALL THE
+# AUTHORS  OR COPYRIGHT  HOLDERS  BE  LIABLE FOR  ANY  CLAIM,  DAMAGES OR  OTHER
+# LIABILITY, WHETHER IN AN ACTION OF  CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE  OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# ------------------------------------------------------------------------------
+
+# Relative PATH to [checkCpfGo] binary
+checkCpfGoPath="../checkCpfGo/checkCpfGo"
+
+# Relative PATH to [checkCpfCxx] binary
+checkCpfCxxPath="../checkCpfCxx/checkCpfCxx"
+
+# Relative PATH to [checkCpfRestApiGo] binary
+checkCpfRestApiGoPath="../checkCpfRestApiGo/checkCpfRestApiGo"
+
+# Relative PATH to [checkCpfRestApiGoBind] binary
+checkCpfRestApiGoBindPath="../checkCpfRestApiGoBind/checkCpfRestApiGoBind"
+
+# Relative PATH to [checkCpfRestApiGoExec] binary
+checkCpfRestApiGoExecPath="../checkCpfRestApiGoExec/checkCpfRestApiGoExec"
+
+# Relative PATH to [checkCpfRestApiGoCgo] binary
+checkCpfRestApiGoCgoPath="../checkCpfRestApiGoCgo/checkCpfRestApiGoCgo"
+
+# Relative PATH to [checkCpfRestApiGoCxxWrap] binary
+checkCpfRestApiGoCxxWrapPath="../checkCpfRestApiGoCxxWrap/checkCpfRestApiGoCxxWrap"
+
+# Relative PATH to [checkCpfRestApiGoCxxSwig] binary
+checkCpfRestApiGoCxxSwigPath="../checkCpfRestApiGoCxxSwig/checkCpfRestApiGoCxxSwig"
+
+# Sleep time between requests in seconds
+sleepTime=3
+
+# Amount of requests or calls during each test
+amountOfRequests=3
+
+# CPF to be attached on each request.
+# The CPFs provided by SERPRO for testing are:
+#
+# 40442820135: Regular (Register OK)
+# 63017285995: Regular (Register OK)
+# 91708635203: Regular (Register OK)
+# 58136053391: Regular (Register OK)
+# 40532176871: Suspended (Problem with the registry)
+# 47123586964: Suspended (Problem with the registry)
+# 07691852312: Regularization Pending (Problem with the registry)
+# 10975384600: Regularization Pending (Problem with the registry)
+# 01648527949: Canceled by Multiplicity (Problem with the registry)
+# 47893062592: Canceled by Multiplicity (Problem with the registry)
+# 98302514705: Null (Problem with the registry)
+# 18025346790: Null (Problem with the registry)
+# 64913872591: Registration Canceled (Problem with the registry)
+# 52389071686: Registration Canceled (Problem with the registry)
+# 05137518743: Deceased Holder (Problem with the registry)
+# 08849979878: Deceased Holder (Problem with the registry)
+#
+# A real CPF might also be used (will return a Not Found error)
+#
+CPF=40442820135
+
+# URL prefix of SERPRO REST API to be used on Curl requests
+serproURL=https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/cpf/
+
+# Authentication TOKEN of SERPRO REST API to be used on Curl requests
+serproTOKEN=4e1a1858bdd584fdc077fb7d80f39283
+
+# File to save reports in CSV format
+reportFile="checkCpfShellBenchmark.csv"
