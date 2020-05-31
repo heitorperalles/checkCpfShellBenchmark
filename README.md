@@ -46,7 +46,7 @@ Two kinds of software are being tested: RESTful APIs and Command line tools.
 
 This test managed 30 calls for each solution, and the scale is in milliseconds.
 
-![Benchmark May 31, 2020](README.png)
+![Benchmark May 31, 2020](reportChart.png)
 
 ## Instructions (on Linux)
 
