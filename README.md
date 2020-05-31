@@ -19,16 +19,34 @@ Two kinds of software are being tested: RESTful APIs and Command line tools.
 * **checkCpfRestApiGo:** Pure GO solution [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGo)
 * **checkCpfRestApiGoBind:**  GO solution using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/check**CpfRestApiGoBind)
 * **checkCpfRestApiGoExec:** GO solution calling libCurl binary [github.com/heitorperalles](https://github.com/heitorperalles/check**CpfRestApiGoExec)
-* **checkCpfRestApiGoCgo:** GO and C solution integrated by CGO and using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCgo)
-* **checkCpfRestApiGoCxxWrap:** GO and C++ solution integrated by CGO and using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxWrap)
-* **checkCpfRestApiGoCxxSwig:** GO and C++ solution integrated by SWIG and using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxSwig)
+* **checkCpfRestApiGoCgo:** GO and C solution integrated by CGO and using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCgo)
+* **checkCpfRestApiGoCxxWrap:** GO and C++ solution integrated by CGO using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxWrap)
+* **checkCpfRestApiGoCxxSwig:** GO and C++ solution integrated by SWIG using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxSwig)
 
 **Important considerations about the tests**
 
 * The GO, C and C++ solutions scopes are similar, but not exactly the same.
 * The Curl binary just return the received response, while GO and C++ solutions treat this data.
-* The binary calls intervals counts the time to arise the process, while the REST API requests are made with the service already started.
+* Binary calls intervals counts the time to arise the process, while the API requests are made with the service already started.
 * There is no error treatment on the script, so a problem during a request will cause some noise at the result.
+
+**Follows an example data based on a report of May 31, 2020:**
+
+|Solution|AVG|MIN|MAX|
+|---|---|---|---|
+|Binary C++ command line|446|370|579|
+|Binary Curl command line|516|380|862|
+|Binary GO command line|617|532|836|
+|Api GO / native HTTP package|440|368|925|
+|Api GO / binary Curl execution |429|382|509|
+|Api GO / go-curl / shared Curl|432|381|679|
+|Api GO / C / shared Curl|**407**|**365**|**443**|
+|Api GO / C / C++ / shared Curl |456|391|761|
+|Api GO / C++ / SWIG / shared Curl|419|367|781|
+
+This test managed 30 calls for each solution, and the scale is in milliseconds.
+
+![Benchmark May 31, 2020](README.png)
 
 ## Instructions (on Linux)
 
