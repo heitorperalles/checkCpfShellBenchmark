@@ -27,6 +27,9 @@
 # Relative PATH to [checkCpfGo] binary
 checkCpfGoPath="../checkCpfGo/checkCpfGo"
 
+# Relative PATH to [checkCpfC] binary
+checkCpfCPath="../checkCpfC/checkCpfC"
+
 # Relative PATH to [checkCpfCxx] binary
 checkCpfCxxPath="../checkCpfCxx/checkCpfCxx"
 

@@ -38,6 +38,7 @@ declare -A MAX
 declare -a commandLineTools=(
 	curl
 	checkCpfGo
+	checkCpfC
 	checkCpfCxx
 )
 

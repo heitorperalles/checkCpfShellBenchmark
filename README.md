@@ -12,6 +12,7 @@ Two kinds of software are being tested: RESTful APIs and Command line tools.
 
 * **Curl:** The libCurl compiled binary [github.com/curl](https://github.com/curl/curl)
 * **checkCpfGo:** Pure GO solution [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfGo)
+* **checkCpfC:** C solution using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfC)
 * **checkCpfCxx:** C++ solution using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfCxx)
 
 **RESTful API solutions - Requests to each API forwarded to libCurl compiled binary:**
@@ -34,6 +35,7 @@ Two kinds of software are being tested: RESTful APIs and Command line tools.
 
 |Solution|AVG|MIN|MAX|
 |---|---|---|---|
+|Binary C command line|434|399|472|
 |Binary C++ command line|446|370|579|
 |Binary Curl command line|516|380|862|
 |Binary GO command line|617|532|836|
@@ -73,6 +75,7 @@ Download the sources of all "checkCpf_" solutions. For example:
 
 ```bash
 git clone git@github.com:heitorperalles/checkCpfGo
+git clone git@github.com:heitorperalles/checkCpfC
 git clone git@github.com:heitorperalles/checkCpfCxx
 git clone git@github.com:heitorperalles/checkCpfRestApiGo
 git clone git@github.com:heitorperalles/checkCpfRestApiGoBind
@@ -112,6 +115,7 @@ At the end, a summary will also be printed, for example:
 Results for 2 calls:
 [curl]                       AVG: 421ms, MIN: 410ms, MAX: 433ms
 [checkCpfGo]                 AVG: 612ms, MIN: 588ms, MAX: 636ms
+[checkCpfC]                  AVG: 432ms, MIN: 401ms, MAX: 460ms
 [checkCpfCxx]                AVG: 438ms, MIN: 438ms, MAX: 439ms
 [checkCpfRestApiGo]          AVG: 438ms, MIN: 426ms, MAX: 451ms
 [checkCpfRestApiGoBind]      AVG: 422ms, MIN: 422ms, MAX: 422ms
