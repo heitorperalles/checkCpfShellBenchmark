@@ -18,8 +18,8 @@ Two kinds of software are being tested: RESTful APIs and Command line tools.
 **RESTful API solutions - Requests to each API forwarded to libCurl compiled binary:**
 
 * **checkCpfRestApiGo:** Pure GO solution [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGo)
-* **checkCpfRestApiGoBind:**  GO solution using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/check**CpfRestApiGoBind)
-* **checkCpfRestApiGoExec:** GO solution calling libCurl binary [github.com/heitorperalles](https://github.com/heitorperalles/check**CpfRestApiGoExec)
+* **checkCpfRestApiGoBind:**  GO solution using libCurl shared library [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoBind)
+* **checkCpfRestApiGoExec:** GO solution calling libCurl binary [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoExec)
 * **checkCpfRestApiGoCgo:** GO and C solution integrated by CGO and using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCgo)
 * **checkCpfRestApiGoCxxWrap:** GO and C++ solution integrated by CGO using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxWrap)
 * **checkCpfRestApiGoCxxSwig:** GO and C++ solution integrated by SWIG using shared libCurl [github.com/heitorperalles](https://github.com/heitorperalles/checkCpfRestApiGoCxxSwig)
